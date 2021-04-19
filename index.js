@@ -1,17 +1,21 @@
 const scissors = $("#scissors");
 const paper = $("#paper");
 const rock = $("#rock");
-const triangle = $("#triangle");
+const pentagon = $("#pentagon");
+const lizard = $("#lizard");
+const spock = $("#spock");
 
 // get img id
 
 const paperID = $("#paper").attr("id");
 const scissorsID = $("#scissors").attr("id");
 const rockID = $("#rock").attr("id");
+const lizardID = $("#lizard").attr("id");
+const spockID = $("#spock").attr("id");
 
 let score = 0;
 let chosenOption;
-const gameOption = ["paper", "scissors", "rock"];
+const gameOption = ["paper", "scissors", "rock", "lizard", "spock"];
 
 const innerTimeOut = 1000;
 const outerTimeOut = innerTimeOut * 2;
@@ -103,22 +107,30 @@ function restartAnimation() {
   rock.removeClass("end-game");
   paper.removeClass("end-game");
   scissors.removeClass("end-game");
+  lizard.removeClass("end-game");
+  spock.removeClass("end-game");
 }
 
 $(".play-again").click(() => {
   restartAnimation();
   $(".circle").attr("role", "button");
   scissors.removeClass("hide");
+  lizard.removeClass("hide");
+  spock.removeClass("hide");
   paper.removeClass("hide");
   rock.removeClass("hide");
-  triangle.removeClass("hide");
+  pentagon.removeClass("hide");
   paper.removeClass("chosen");
+  lizard.removeClass("chosen");
+  spock.removeClass("chosen");
   scissors.removeClass("chosen");
   rock.removeClass("chosen");
   initGame();
   $("#rock-chosen").removeClass("end-game");
   $("#paper-chosen").removeClass("end-game");
   $("#scissors-chosen").removeClass("end-game");
+  $("#lizard-chosen").removeClass("end-game");
+  $("#spock-chosen").removeClass("end-game");
 });
 
 // Game Animation
@@ -128,7 +140,7 @@ function initGame() {
     // Tirar a função de click das imagens
     $(".circle").off("click").removeAttr("role");
 
-    houseChoice = Math.floor(Math.random() * 3) + 1;
+    houseChoice = Math.floor(Math.random() * 5) + 1;
     houseChoice = gameOption[houseChoice - 1];
     console.log(houseChoice);
 
@@ -145,11 +157,20 @@ function initGame() {
           case "rock":
             handleWin();
             break;
+          case "spock":
+            handleWin();
+            break;
+          case "lizard":
+            handleLoss();
+            break;
         }
         // Esconder as opções não escolhidas
+
         scissors.addClass("hide");
+        spock.addClass("hide");
+        lizard.addClass("hide");
         rock.addClass("hide");
-        triangle.addClass("hide");
+        pentagon.addClass("hide");
         paper.addClass("chosen");
         // começar a animação das opções não escolhidas
         animation(paper);
@@ -159,8 +180,10 @@ function initGame() {
         // Esconder as opções não escolhidas
         paper.addClass("hide");
         rock.addClass("hide");
-        triangle.addClass("hide");
+        pentagon.addClass("hide");
         scissors.addClass("chosen");
+        spock.addClass("hide");
+        lizard.addClass("hide");
         // começar a animação das opções não escolhidas
         animation(scissors);
         // Regras do jogo para a opção escolhida
@@ -174,6 +197,12 @@ function initGame() {
           case "rock":
             handleLoss();
             break;
+          case "lizard":
+            handleWin();
+            break;
+          case "spock":
+            handleLoss();
+            break;
         }
         break;
 
@@ -181,8 +210,10 @@ function initGame() {
         // Esconder as opções não escolhidas
         paper.addClass("hide");
         scissors.addClass("hide");
-        triangle.addClass("hide");
+        pentagon.addClass("hide");
         rock.addClass("chosen");
+        spock.addClass("hide");
+        lizard.addClass("hide");
         // começar a animação das opções não escolhidas
         animation(rock);
         // Regras do jogo para a opção escolhida
@@ -194,6 +225,72 @@ function initGame() {
             handleLoss();
             break;
           case "rock":
+            handleTie();
+            break;
+          case "lizard":
+            handleWin();
+            break;
+          case "spock":
+            handleLoss();
+            break;
+        }
+        break;
+
+      case lizardID:
+        // Esconder as opções não escolhidas
+        paper.addClass("hide");
+        scissors.addClass("hide");
+        pentagon.addClass("hide");
+        lizard.addClass("chosen");
+        spock.addClass("hide");
+        rock.addClass("hide");
+        // começar a animação das opções não escolhidas
+        animation(lizard);
+        // Regras do jogo para a opção escolhida
+        switch (houseChoice) {
+          case "scissors":
+            handleLoss();
+            break;
+          case "paper":
+            handleWin();
+            break;
+          case "rock":
+            handleLoss();
+            break;
+          case "lizard":
+            handleTie();
+            break;
+          case "spock":
+            handleWin();
+            break;
+        }
+        break;
+
+      case spockID:
+        // Esconder as opções não escolhidas
+        paper.addClass("hide");
+        scissors.addClass("hide");
+        pentagon.addClass("hide");
+        spock.addClass("chosen");
+        lizard.addClass("hide");
+        rock.addClass("hide");
+        // começar a animação das opções não escolhidas
+        animation(spock);
+        // Regras do jogo para a opção escolhida
+        switch (houseChoice) {
+          case "scissors":
+            handleWin();
+            break;
+          case "paper":
+            handleLoss();
+            break;
+          case "rock":
+            handleWin();
+            break;
+          case "lizard":
+            handleLoss();
+            break;
+          case "spock":
             handleTie();
             break;
         }

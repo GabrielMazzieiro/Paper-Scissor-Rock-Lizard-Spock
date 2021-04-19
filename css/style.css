@@ -175,18 +175,23 @@ body {
 
 /********************************** Score display  ******************************/
 #score {
-  font-weight: 500;
-  font-size: 0.7rem;
+  font-weight: 700;
+  font-size: 1rem;
   letter-spacing: 2px;
   border-radius: 5px;
   background-color: whitesmoke;
   color: hsl(229, 64%, 46%);
   padding: 0.5rem;
   text-align: center;
+  width: 10rem;
+}
+
+#score p {
+  margin-top: 10px;
 }
 
 .score-number {
-  font-size: 2rem;
+  font-size: 3.5rem !important;
   margin-top: 5px;
   font-size: 2.5rem;
   color: hsl(229, 25%, 31%);
@@ -268,7 +273,7 @@ h2 {
   text-transform: uppercase;
   color: white;
   position: relative;
-  bottom: 200px;
+  bottom: 25rem;
 }
 
 /************************** Game Result  ***********************/
@@ -276,8 +281,8 @@ h2 {
 #game-result p {
   display: inline;
   position: relative;
-  left: 35rem;
-  bottom: 87rem;
+  left: 35.6rem;
+  bottom: 120rem;
   font-size: 3rem;
   font-weight: 700;
 }
@@ -288,8 +293,8 @@ h2 {
   font-size: 1rem;
   font-weight: 600;
   position: relative;
-  left: 23.4rem;
-  bottom: 84rem;
+  left: 24rem;
+  bottom: 117rem;
 }
 
 #game-result.hide {
@@ -312,7 +317,7 @@ h2 {
   padding: 2rem;
   width: 390px;
   position: relative;
-  bottom: 85.625rem;
+  bottom: 120rem;
   left: 28.75rem;
   display: none;
 }
@@ -348,23 +353,23 @@ h2 {
 
 /*********************** triangle backgrund **************************/
 
-#triangle {
+#pentagon {
   position: relative;
   z-index: -4;
-  bottom: 23.125rem;
+  bottom: 39rem;
 }
 
 /* fadeout transition */
 
-#triangle.hide {
+#pentagon.hide {
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
 
 /****************************************************** Paper Circle **********************************************/
 .paper {
-  left: 29.375rem;
-  bottom: 4.375rem;
+  left: 47rem;
+  top: 2rem;
   width: 7.5rem;
   height: 7.5rem;
   background-image: repeating-radial-gradient(
@@ -413,7 +418,8 @@ h2 {
 
 .paper.chosen {
   left: 370px;
-  bottom: 28px;
+  top: -1rem;
+  bottom: 10rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
@@ -446,7 +452,7 @@ h2 {
 
 .paper.chosen.end-game {
   left: 170px;
-  bottom: 28px;
+  top: -1rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
@@ -461,8 +467,8 @@ h2 {
 /***************************************************** Scissor Circle ***********************************************/
 
 .scissors {
-  left: 720px;
-  bottom: 190px;
+  left: 36.5rem;
+  bottom: 13rem;
   width: 120px;
   height: 120px;
   background-image: repeating-radial-gradient(
@@ -558,8 +564,8 @@ h2 {
 /********************************************************* Rock Circle ********************************************/
 
 .rock {
-  left: 590px;
-  bottom: 70px;
+  left: 42.5rem;
+  bottom: 1rem;
   width: 120px;
   height: 120px;
   background-image: repeating-radial-gradient(
@@ -650,6 +656,198 @@ h2 {
 
   transition: 1s ease-out;
 }
+/********************************************************* Lizard Circle ********************************************/
+
+.lizard {
+  left: 30.8rem;
+  bottom: 8.7rem;
+  width: 120px;
+  height: 120px;
+  background-image: repeating-radial-gradient(
+    circle at 60px 68px,
+    rgb(224, 224, 224),
+    white 60px
+  );
+  border-radius: 100%;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.lizard::before {
+  border-radius: 100%;
+  content: "";
+  background-image: repeating-radial-gradient(
+    circle at 79px 67px,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%) 90px
+  );
+
+  top: -20px;
+  left: -20px;
+  bottom: -25px;
+  right: -20px;
+  position: absolute;
+  z-index: -1;
+}
+.lizard img {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  width: 60px;
+}
+
+/* fadeout transition */
+.lizard.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.lizard.chosen {
+  left: 380px;
+  bottom: 24rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+
+  transition: 1s ease-in;
+}
+
+.lizard.chosen::before {
+  background-image: repeating-radial-gradient(
+    circle at 130px 115px,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%) 140px
+  );
+  transition: 1s ease-in;
+}
+
+.lizard.chosen img {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  top: 35px;
+  width: 100px;
+  transition: 1s ease-in;
+}
+.lizard.chosen.end-game {
+  left: 180px;
+  bottom: 24rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+
+  transition: 1s ease-out;
+}
+
+/********************************************************* Lizard Circle ********************************************/
+
+.spock {
+  left: 27rem;
+  bottom: 28rem;
+  width: 120px;
+  height: 120px;
+  background-image: repeating-radial-gradient(
+    circle at 60px 68px,
+    rgb(224, 224, 224),
+    white 60px
+  );
+  border-radius: 100%;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.spock::before {
+  border-radius: 100%;
+  content: "";
+  background-image: repeating-radial-gradient(
+    circle at 79px 67px,
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%) 90px
+  );
+
+  top: -20px;
+  left: -20px;
+  bottom: -25px;
+  right: -20px;
+  position: absolute;
+  z-index: -1;
+}
+.spock img {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  top: 0px;
+  left: 7px;
+  width: 60px;
+}
+
+/* fadeout transition */
+.spock.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.spock.chosen {
+  left: 380px;
+  bottom: 31rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+
+  transition: 1s ease-in;
+}
+
+.spock.chosen::before {
+  background-image: repeating-radial-gradient(
+    circle at 130px 115px,
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%) 140px
+  );
+  transition: 1s ease-in;
+}
+
+.spock.chosen img {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  top: 20px;
+  width: 100px;
+  transition: 1s ease-in;
+}
+.spock.chosen.end-game {
+  left: 180px;
+  bottom: 31rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+
+  transition: 1s ease-out;
+}
 
 /************************************ House circle **********************************************************/
 
@@ -659,7 +857,7 @@ h2 {
   position: relative;
   z-index: 0;
   left: 740px;
-  bottom: 820px;
+  bottom: 67.5rem;
   background-color: hsl(236, 38%, 8%);
   opacity: 0.3;
   border-radius: 100%;
@@ -677,8 +875,8 @@ h2 {
 /* Rock  */
 
 .rock.house-choice {
-  left: 725px;
-  bottom: 1260px;
+  left: 45.3125rem;
+  bottom: 95.5rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
@@ -706,8 +904,8 @@ h2 {
 }
 
 .rock.house-choice.end-game {
-  left: 925px;
-  bottom: 1260px;
+  left: 57.8125rem;
+  bottom: 95.5rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
@@ -721,8 +919,8 @@ h2 {
 /* Scissor  */
 
 .scissors.house-choice {
-  left: 727px;
-  bottom: 1140px;
+  left: 45.4375rem;
+  bottom: 88.3rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
@@ -751,8 +949,8 @@ h2 {
 }
 
 .scissors.house-choice.end-game {
-  left: 927px;
-  bottom: 1140px;
+  left: 57.9375rem;
+  bottom: 88.3rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
@@ -767,8 +965,9 @@ h2 {
 /* Paper  */
 
 .paper.house-choice {
-  left: 725px;
-  bottom: 1020px;
+  left: 45.3125rem;
+  bottom: 170rem;
+  top: -80rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
@@ -796,8 +995,100 @@ h2 {
 }
 
 .paper.house-choice.end-game {
+  left: 57.8125rem;
+  bottom: 170rem;
+  top: -80rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+
+  transition: 1s ease-out;
+}
+
+/* Lizard  */
+
+.lizard.house-choice {
+  left: 45.3125rem;
+  bottom: 103.5rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+}
+
+.lizard.house-choice::before {
+  background-image: repeating-radial-gradient(
+    circle at 130px 115px,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%) 140px
+  );
+}
+
+.lizard.house-choice img {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  top: 35px;
+  width: 100px;
+}
+
+.lizard.house-choice.end-game {
+  left: 57.8125rem;
+  bottom: 103.5rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+
+  transition: 1s ease-out;
+}
+
+/* Lizard  */
+
+.spock.house-choice {
+  left: 725px;
+  bottom: 110rem;
+  width: 220px;
+  height: 220px;
+  background-image: repeating-radial-gradient(
+    circle at 110px 120px,
+    rgb(224, 224, 224),
+    white 110px
+  );
+}
+
+.spock.house-choice::before {
+  background-image: repeating-radial-gradient(
+    circle at 130px 115px,
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%) 140px
+  );
+}
+
+.spock.house-choice img {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  top: 25px;
+  left: 13px;
+  width: 100px;
+}
+
+.spock.house-choice.end-game {
   left: 925px;
-  bottom: 1020px;
+  bottom: 110rem;
   width: 220px;
   height: 220px;
   background-image: repeating-radial-gradient(
