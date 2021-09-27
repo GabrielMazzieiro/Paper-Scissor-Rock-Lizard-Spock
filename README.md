@@ -1,7 +1,7 @@
 # Frontend Mentor - Rock, Paper, Scissors, Lizard, Spock
 Little game based in The Big Bang Theory TV show. 
 This little web project was made as a bonus challenge exercise.
-The idea was to create a websit in which you could play the Big Bang Theory Paper-Scissor-Rock-Lizard-Spock game as many times you want. 
+The idea was to create a website in which you could play the Big Bang Theory Paper-Scissor-Rock-Lizard-Spock game as many times you want. 
 
 Using CSS to create the animations and Java Script to create the simple rules.
 
